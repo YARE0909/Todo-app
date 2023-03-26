@@ -7,6 +7,7 @@ import ShowScreen from './src/screens/ShowScreen';
 import CreateScreen from './src/screens/CreateScreen';
 import Feather from 'react-native-vector-icons/Feather';
 import {TouchableOpacity} from 'react-native';
+import EditScreen from './src/screens/EditScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,10 +31,11 @@ function App() {
           name="Home"
           component={Home}
           options={({navigation}) => ({
-            title: 'Blog',
-            headerTitle: 'Blogs',
+            title: 'Blogs',
             headerRight: () => (
-              <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('Create')}
+                hitSlop={{top: 20, bottom: 20, left: 20, right: 20}}>
                 <Feather
                   name="plus"
                   style={{
@@ -48,13 +50,37 @@ function App() {
         <Stack.Screen
           name="Show"
           component={ShowScreen}
-          options={{title: 'Blogs'}}
+          options={({route, navigation}) => ({
+            title: 'Blog',
+            headerRight: () => (
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('Edit', {id: route.params});
+                }}
+                hitSlop={{top: 20, bottom: 20, left: 20, right: 20}}>
+                <Feather
+                  name="edit"
+                  style={{
+                    fontSize: 20,
+                    color: 'black',
+                  }}
+                />
+              </TouchableOpacity>
+            ),
+          })}
         />
         <Stack.Screen
           name="Create"
           component={CreateScreen}
           options={{
             title: 'Blogs',
+          }}
+        />
+        <Stack.Screen
+          name="Edit"
+          component={EditScreen}
+          options={{
+            title: 'Edit Blog',
           }}
         />
       </Stack.Navigator>

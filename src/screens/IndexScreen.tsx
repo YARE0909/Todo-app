@@ -12,7 +12,6 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const Home = ({navigation}: {navigation: any}) => {
   const {state, deleteBlogPost}: any = useContext(Context);
-  console.log(state);
   return (
     <View style={styles.container}>
       <FlatList
@@ -38,7 +37,7 @@ const Home = ({navigation}: {navigation: any}) => {
                   {item.title}
                 </Text>
                 <TouchableOpacity
-                  hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}
+                  hitSlop={{top: 20, bottom: 20, left: 20, right: 20}}
                   onPress={() => {
                     deleteBlogPost(item.id);
                   }}>

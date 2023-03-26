@@ -5,12 +5,14 @@ import {Context} from '../context/BlogContext';
 const ShowScreen = ({route}: {route: any}) => {
   const {id} = route.params;
   const {state}: any = useContext(Context);
-
   const blogPost = state.find((blogPost: any) => blogPost.id === id);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{blogPost.title}</Text>
+      <View>
+        <Text style={styles.title}>{blogPost.title}</Text>
+        <Text style={styles.footer}>Author</Text>
+      </View>
       <Text style={styles.text}>{blogPost.content}</Text>
     </View>
   );
@@ -22,9 +24,22 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'white',
     padding: 15,
+    gap: 20,
   },
   text: {
+    fontSize: 16,
+    fontWeight: '800',
+    color: '#6a6f73',
+  },
+  title: {
     color: 'black',
+    fontSize: 25,
+    fontWeight: '900',
+  },
+  footer: {
+    color: '#cbc9cf',
+    fontSize: 14,
+    fontWeight: '900',
   },
 });
 
