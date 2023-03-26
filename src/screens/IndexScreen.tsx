@@ -30,7 +30,7 @@ const Home = ({navigation}: {navigation: any}) => {
               padding: 15,
               paddingHorizontal: 25,
               borderWidth: 2,
-              borderColor: '#cbc9cf',
+              borderColor: '#5b5a5c',
               borderRadius: 10,
               borderStyle: 'dashed',
             }}>
@@ -38,7 +38,7 @@ const Home = ({navigation}: {navigation: any}) => {
               style={{
                 alignSelf: 'center',
                 fontWeight: '900',
-                color: '#cbc9cf',
+                color: '#5b5a5c',
                 fontSize: 20,
               }}>
               New Note +
@@ -47,20 +47,20 @@ const Home = ({navigation}: {navigation: any}) => {
         </View>
       ) : (
         <FlatList
-        showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
           data={state}
           keyExtractor={blogPost => blogPost.id}
           renderItem={({item}) => {
             return (
               <TouchableOpacity
-              style={{
-                padding: 5,
-                borderWidth: 2,
-                borderColor: '#cbc9cf',
-                borderRadius: 10,
-                borderStyle: 'solid',
-                marginVertical: 10
-              }}
+                style={{
+                  padding: 5,
+                  borderWidth: 2,
+                  borderColor: '#5b5a5c',
+                  borderRadius: 10,
+                  borderStyle: 'solid',
+                  marginVertical: 10,
+                }}
                 onPress={() => navigation.navigate('Show', {id: item.id})}>
                 <View
                   style={{

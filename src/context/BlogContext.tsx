@@ -9,11 +9,17 @@ const blogReducer = (state: any, action: any) => {
           id: Math.floor(Math.random() * 99999),
           title: action.payload.title,
           content: action.payload.content,
+          date: action.payload.date,
         },
       ];
     case 'edit_blogpost':
       return state.map((blogPost: any) => {
-        return blogPost.id === action.payload.id ? action.payload : blogPost;
+        return blogPost.id === action.payload.id ? {
+          id: action.payload.id,
+          title: action.payload.title,
+          content: action.payload.content,
+          date: blogPost.date,
+        } : blogPost;
       });
     case 'delete_blogpost':
       return state.filter((blogPost: any) => blogPost.id !== action.payload);
@@ -24,13 +30,15 @@ const blogReducer = (state: any, action: any) => {
 
 const addBlogPost = (dispatch: any) => {
   return (title: any, content: any, callback: any) => {
-    dispatch({type: 'add_blogpost', payload: {title, content}});
+    const date = new Date().toLocaleString();
+    dispatch({type: 'add_blogpost', payload: {title, content, date}});
     callback ? callback() : null;
   };
 };
 const editBlogPost = (dispatch: any) => {
-  return (id: any, title: any, content: any, callback: any) => {
-    dispatch({type: 'edit_blogpost', payload: {id, title, content}});
+  return (id: any, title: any, content: any, callback: any, date: any) => {
+    date = 
+    dispatch({type: 'edit_blogpost', payload: {id, title, content, date}});
     callback ? callback() : null;
   };
 };

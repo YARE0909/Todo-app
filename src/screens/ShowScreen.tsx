@@ -8,13 +8,18 @@ const ShowScreen = ({route}: {route: any}) => {
   const blogPost = state.find((blogPost: any) => blogPost.id === id);
 
   return (
-      <ScrollView style={styles.container}>
+    <ScrollView style={styles.container}>
+      <View
+        style={{
+          gap: 10,
+        }}>
         <View>
           <Text style={styles.title}>{blogPost.title}</Text>
-          <Text style={styles.footer}>Author</Text>
+          <Text style={styles.footer}>{blogPost.date}</Text>
         </View>
         <Text style={styles.text}>{blogPost.content}</Text>
-      </ScrollView>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -24,13 +29,12 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'black',
     padding: 15,
-    gap: 20,
     flex: 1,
   },
   text: {
     fontSize: 16,
     fontWeight: '800',
-    color: '#6a6f73',
+    color: '#c8c5ca',
   },
   title: {
     color: 'white',
@@ -38,9 +42,9 @@ const styles = StyleSheet.create({
     fontWeight: '900',
   },
   footer: {
-    color: '#cbc9cf',
+    color: '#5b5a5c',
     fontSize: 14,
-    fontWeight: '900',
+    fontWeight: '800',
   },
 });
 

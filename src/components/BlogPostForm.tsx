@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     borderRadius: 5,
-    borderColor: '#9b12e6',
+    borderColor: '#5b5a5c',
     borderWidth: 1,
     color: 'white',
     fontSize: 17,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   textInputContent: {
     borderRadius: 5,
-    borderColor: '#9b12e6',
+    borderColor: '#5b5a5c',
     borderWidth: 1,
     color: 'white',
     fontSize: 17,

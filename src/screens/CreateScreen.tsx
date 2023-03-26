@@ -7,7 +7,7 @@ const CreateScreen = ({navigation}: any) => {
   const {addBlogPost}: any = useContext(Context);
   return (
     <BlogPostForm
-      onSubmit={(title: any, content: any) => {
+      onSubmit={(title: any, content: any, date: any) => {
         addBlogPost(title, content, () => {
           navigation.navigate('Home');
         });

@@ -26,6 +26,7 @@ function App() {
           },
           headerTitleAlign: 'center',
           headerShadowVisible: false,
+          headerTintColor: 'white'
         }}>
         <Stack.Screen
           name="Home"
