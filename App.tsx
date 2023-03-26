@@ -18,11 +18,11 @@ function App() {
         initialRouteName="Home"
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#fff',
+            backgroundColor: 'black',
           },
           headerTitleStyle: {
             fontWeight: 'bold',
-            color: '#000',
+            color: 'white',
           },
           headerTitleAlign: 'center',
           headerShadowVisible: false,
@@ -31,7 +31,7 @@ function App() {
           name="Home"
           component={Home}
           options={({navigation}) => ({
-            title: 'Blogs',
+            title: 'Notes',
             headerRight: () => (
               <TouchableOpacity
                 onPress={() => navigation.navigate('Create')}
@@ -40,7 +40,7 @@ function App() {
                   name="plus"
                   style={{
                     fontSize: 20,
-                    color: 'black',
+                    color: 'white',
                   }}
                 />
               </TouchableOpacity>
@@ -51,7 +51,7 @@ function App() {
           name="Show"
           component={ShowScreen}
           options={({route, navigation}) => ({
-            title: 'Blog',
+            title: 'Note',
             headerRight: () => (
               <TouchableOpacity
                 onPress={() => {
@@ -62,7 +62,7 @@ function App() {
                   name="edit"
                   style={{
                     fontSize: 20,
-                    color: 'black',
+                    color: 'white',
                   }}
                 />
               </TouchableOpacity>
@@ -73,14 +73,14 @@ function App() {
           name="Create"
           component={CreateScreen}
           options={{
-            title: 'Blogs',
+            title: 'New Note',
           }}
         />
         <Stack.Screen
           name="Edit"
           component={EditScreen}
           options={{
-            title: 'Edit Blog',
+            title: 'Edit Note',
           }}
         />
       </Stack.Navigator>

@@ -31,7 +31,8 @@ const BlogPostForm = ({onSubmit, initialValues}: any) => {
           value={content}
           placeholder="Write away......"
           placeholderTextColor="#a7a4a8"
-          style={styles.textInput}
+          style={styles.textInputContent}
+          multiline
         />
       </View>
       <TouchableOpacity
@@ -46,7 +47,7 @@ const BlogPostForm = ({onSubmit, initialValues}: any) => {
             fontSize: 20,
             alignSelf: 'center',
           }}>
-          Post
+          Done
         </Text>
       </TouchableOpacity>
     </View>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'white',
+    backgroundColor: 'black',
     padding: 15,
     gap: 10,
   },
@@ -77,13 +78,23 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: '#9b12e6',
     borderWidth: 1,
-    color: 'black',
+    color: 'white',
     fontSize: 17,
     fontWeight: '800',
     padding: 5,
   },
+  textInputContent: {
+    borderRadius: 5,
+    borderColor: '#9b12e6',
+    borderWidth: 1,
+    color: 'white',
+    fontSize: 17,
+    fontWeight: '800',
+    padding: 5,
+    maxHeight: 200,
+  },
   button: {
-    color: 'black',
+    color: 'white',
     backgroundColor: '#9b12e6',
     padding: 5,
     borderRadius: 5,
