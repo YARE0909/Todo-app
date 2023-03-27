@@ -55,11 +55,9 @@ const Home = ({navigation}: {navigation: any}) => {
               <TouchableOpacity
                 style={{
                   padding: 5,
-                  borderWidth: 2,
+                  borderBottomWidth: 2,
                   borderColor: '#5b5a5c',
-                  borderRadius: 10,
                   borderStyle: 'solid',
-                  marginVertical: 10,
                 }}
                 onPress={() => navigation.navigate('Show', {id: item.id})}>
                 <View

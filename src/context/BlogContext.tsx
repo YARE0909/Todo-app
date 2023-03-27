@@ -32,9 +32,11 @@ const blogReducer = (state: any, action: any) => {
 
 const addBlogPost = (dispatch: any) => {
   return (title: any, content: any, callback: any) => {
-    const date = new Date().toLocaleString();
-    dispatch({type: 'add_blogpost', payload: {title, content, date}});
-    callback ? callback() : null;
+    if (title !== '') {
+      const date = new Date().toLocaleString();
+      dispatch({type: 'add_blogpost', payload: {title, content, date}});
+      callback ? callback() : null;
+    }
   };
 };
 const editBlogPost = (dispatch: any) => {
