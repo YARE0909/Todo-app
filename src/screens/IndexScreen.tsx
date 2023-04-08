@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {
   View,
   Text,
@@ -11,8 +11,17 @@ import {Context} from '../context/BlogContext';
 import Feather from 'react-native-vector-icons/Feather';
 
 const Home = ({navigation}: {navigation: any}) => {
-  const {state, deleteBlogPost}: any = useContext(Context);
-  console.log(state);
+  const {state, deleteBlogPost, getBlogPosts}: any = useContext(Context);
+
+  useEffect(() => {
+    getBlogPosts();
+
+    const listener = navigation.addListener('focus', () => {
+      getBlogPosts();
+    });
+    return listener;
+  }, []);
+
   return (
     <View style={styles.container}>
       {state.length === 0 ? (
